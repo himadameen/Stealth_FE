@@ -33,17 +33,15 @@ body {
   padding-bottom: 30px;
 }
 
-#btn{
+#btn {
   background: #0563b4;
   color: white;
 }
 
-#btn:hover{
+#btn:hover {
   background: black;
 }
 
 p {
   color: red;
 }
-
-

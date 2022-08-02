@@ -18,13 +18,13 @@ const Form = () => {
     const [submit, setSubmit] = useState(false);
 
     const handleSubmit = (e) => {
-        const {name, value} = e.target;
-        setValues({...values , [name]:value});
+        const { name, value } = e.target;
+        setValues({ ...values, [name]: value });
         // console.log({...values , [name]:value});
     }
 
     useEffect(() => {
-        if(Object.keys(formError).length === 0 && submit){}
+        if (Object.keys(formError).length === 0 && submit) { }
     }, [formError])
 
     const onsubmit = (e) => {
@@ -37,24 +37,24 @@ const Form = () => {
     const validate = (values) => {
         const errors = {};
         const er = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-        if(!values.username){
+        if (!values.username) {
             errors.username = "Username is required!";
         }
-        if(!values.email){
+        if (!values.email) {
             errors.email = "Email is required!";
-        }else if(!er.test(values.email)){
+        } else if (!er.test(values.email)) {
             errors.email = "Please enter valid email"
         }
-        if(!values.mobile){
+        if (!values.mobile) {
             errors.mobile = "Please enter your mobile number";
         }
-        if(!values.country){
+        if (!values.country) {
             errors.country = "Please enter your country";
         }
-        if(!values.state){
+        if (!values.state) {
             errors.state = "Please enter your state";
         }
-        if(!values.city){
+        if (!values.city) {
             errors.city = "please enter your city";
         }
         return errors;
@@ -63,11 +63,11 @@ const Form = () => {
     return (
         <>
             <div className='container'>
-            {Object.keys(formError).length === 0 && submit ? (
-                <div className='ui message success'>Successfully Submitted</div>
-            ):(
-                <div></div>
-            )}
+                {Object.keys(formError).length === 0 && submit ? (
+                    <div className='ui message success'>Successfully Submitted</div>
+                ) : (
+                    <div></div>
+                )}
                 <form onSubmit={onsubmit}>
                     <h1>Registration Form</h1>
                     <div className='ui divider'></div>
@@ -89,12 +89,12 @@ const Form = () => {
                         <p>{formError.mobile}</p>
                         <div className='field'>
                             <label>Country</label>
-                            <input type='text' name='country' placeholder='enter your country' values={initialValues.country} onChange={handleSubmit}/>
+                            <input type='text' name='country' placeholder='enter your country' values={initialValues.country} onChange={handleSubmit} />
                         </div>
                         <p>{formError.country}</p>
                         <div className='field'>
                             <label>State</label>
-                            <input type='text' name='state' placeholder='enter your state' values={initialValues.state} onChange={handleSubmit}/>
+                            <input type='text' name='state' placeholder='enter your state' values={initialValues.state} onChange={handleSubmit} />
                         </div>
                         <p>{formError.state}</p>
                         <div className='field'>
